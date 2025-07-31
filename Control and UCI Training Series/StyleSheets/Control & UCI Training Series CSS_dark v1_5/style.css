@@ -1,0 +1,772 @@
+/*
+Control and UCI Training Series
+Updated by JHPerkins
+Minor updates by NMakaryk
+Rev 0.3.4
+*/
+
+:root {
+    --ColorDark: #2C3740;
+    --ColorLight: #ffffff;
+    --ColorPrimary: #9CC9FF;
+    --ColorSecondary: #72AAD8;
+    --ColorTertiary: #842462;
+    --ColorAccent: #C48AB2;
+    --ColorGreyDark: #404040;
+    --ColorGreyMedium: #616262;
+    --ColorGreyLight: #E6E9ED;
+    --ColorStop: #B40F00;
+    --ColorGo: #719E1B;
+    --ColorBlack: #000000;
+    --ColorWhite: #ffffff;
+    --ColorRed: #FF0000;
+    --ColorBlueQSYS: #0076bf;
+    --ColorBlueDark: #103B5B;
+    --ColorBlueLight: #72AAD8;
+    --ColorBackground: #3C4046;
+    --ColorControlAreaLight: #616974d3;
+    --ColorControlAreaDark: #212224d7;
+    --ColorControlAreaGreen: #70BF44;
+
+    --ColorHighLight: #ffaf01;
+    --ProjectFont: "Poppins";
+    --BorderDecoration: 2px;
+
+    --SizeExtraLarge: 66;
+    --SizeLarge: 32;
+    --SizeMedium: 24;
+    --SizeSmall: 18;
+    
+    --SizeRadius: 10;
+}
+
+/* Default Control Styles */
+
+button {
+    background-color: var(--ColorControlAreaDark);
+    -qsc-icon-color: var(--ColorLight);
+    font-family: var(--ProjectFont);
+    font-size: var(--SizeSmall);
+    padding: 4px;
+    border-radius: 15px;
+    border-width: 0px;
+}
+
+button:value(1) {
+    background-color: var(--ColorGreyLight);
+    -qsc-icon-color: var(--ColorLight);
+}
+
+fader {
+    -qsc-render-style: layer;
+    -qsc-fader-slot-class: fader-slot;
+    -qsc-fader-slot-width: 15px;
+    -qsc-fader-cap-class: fader-cap;
+    -qsc-fader-cap-width: 100vw;
+    -qsc-fader-cap-height: 35vw;
+    background-color: transparent;
+}
+
+fader.vertical {
+    -qsc-fader-cap-width: 20vw;
+    -qsc-fader-cap-height: 20vw;
+}
+fader.horizontal {
+    -qsc-fader-cap-width: 20vh;
+    -qsc-fader-cap-height: 20vh;
+}
+
+.fader-slot {
+    background-color: var(--ColorGreyLight);
+    border-radius: 6px;
+    border: 2px;
+    border-color: var(--ColorDark);
+}
+
+
+.fader-toohigh {
+    background-color:red
+}
+
+
+.fader-slot:value(1) {
+    background-color: var(--ColorPrimary);
+}
+
+.fader-cap {
+    background-color: var(--ColorSecondary);
+    border: 2px var(--ColorGreyDark);
+    border-radius: 10px;
+}
+
+groupbox {
+    background-color: var(--ColorSecondary);
+}
+
+.groupbox-ControlAreaOuter {
+    background-color: var(--ColorControlAreaLight);
+    border-radius: 0;
+    border-width: 0;
+}
+
+.groupbox-ControlAreaInner {
+    background-color: var(--ColorControlAreaDark);
+    border-radius: 0;
+    border-width: 0;
+}
+
+.groupbox-ControlAreaCall {
+    background-color: var(--ColorControlAreaGreen);
+    border-radius: 0;
+    border-width: 0;
+}
+
+meter {
+    -qsc-render-style: layer;
+    -qsc-meter-indicator-class: meter-indicator;
+    background-color: transparent;
+    border: 0;
+    padding: 20px;
+  }
+  
+  meter:value(1) {
+    background-color: var(--ColorControlAreaDark);
+    border: 1px black;
+  } 
+  
+  .meter-indicator { 
+    background-color: var(--ColorControlAreaDark);
+    border: 1px black;
+  }
+  
+  .meter-indicator:value(1) { 
+    background-color: var(--ColorPrimary);
+    border: 1px black;
+  }
+
+page {background-color: var(--ColorBackground);}
+
+.background_1 {background-image: url(images/marble_back.jpg);}
+
+.background_2 {background-image: url(images/triangles_back.jpg);}
+
+.background_3 {background-image: url(images/pics/bg-dark.png);}
+
+.logo {background: transparent center / 90% vertical / 90% horizontal url(images/pics/overlay-logo-lbl.png);}
+
+textblock {
+    color: var(--ColorLight);
+    font-family: var(--ProjectFont);
+    font-size: var(--SizeMedium);
+    padding: 4px;
+    border-radius: 10px;
+}
+
+textbox {
+    color: var(--ColorWhite);
+    border: var(--ColorBlueLight);
+    border-width:6px;
+    background-color: var(--ColorControlAreaLight);
+    font-family: var(--ProjectFont);
+    font-size: var(--SizeMedium);
+    padding: 4px;
+    border-radius: 10px;
+}
+
+
+led {
+    background-color: var(--ColorDark);
+    border-width:4px;
+    border-color: var(--ColorControlAreaLight);
+}
+
+led:value(1) {
+    background-color: var(--ColorBlueLight);
+}
+
+
+listbox {
+    color: var(--ColorLight);
+    font-family: var(--ProjectFont);
+    font-size: var(--SizeSmall);
+    padding: 4px;
+    border-radius: 10px;
+}
+header {
+    color: var(--ColorLight);
+    border: var(--BorderDecoration) var(--ColorSecondary);
+    font-family: var(--ProjectFont);
+    font-size: var(--SizeLarge);
+    padding: 4px;
+    border-radius: 10px;
+}
+
+
+combobox {
+    background-color: var(--ColorGreyMedium);
+    color: var(--ColorLight);
+    border: var(--BorderDecoration) var(--ColorSecondary);
+    font-family: var(--ProjectFont);
+    font-size: var(--SizeMedium);
+    padding: 4px;
+    border-radius: 10px;
+}
+
+listbox {
+    background-color: var(--ColorGreyMedium);
+    color: var(--ColorLight);
+    border: var(--BorderDecoration) var(--ColorSecondary);
+    font-family: var(--ProjectFont);
+    font-size: var(--SizeMedium);
+    padding: 4px;
+    border-radius: 10px;
+}
+
+/* Text Styles */
+
+
+.text-border_none{
+    border: rgba(0, 0, 0, 0);
+    color: var(--ColorWhite)
+}
+
+.text-color_white{
+    font-family: var(--ProjectFont);
+    color: var(--ColorWhite)
+}
+
+.text-color_red{
+    font-family: var(--ProjectFont);
+    color: var(--ColorRed)
+}
+
+.text-color_green{
+    font-family: var(--ProjectFont);
+    color: var(--ColorControlAreaGreen)
+}
+
+.text-color_blue{
+    font-family: var(--ProjectFont);
+    color: var(--ColorBlueQSYS)
+}
+
+.text-color_black{
+    font-family: var(--ProjectFont);
+    color: var(--ColorBlack)
+}
+
+.text_SizeExtraLarge{
+    font-size: var(--SizeExtraLarge);
+}
+
+.text_SizeLarge{
+    font-size: var(--SizeLarge);
+}
+
+.text_SizeMedium{
+    font-size: var(--SizeMedium);
+}
+
+.text_SizeSmall{
+    font-size: var(--SizeSmall);
+}
+
+/* Button  Styles */
+
+.button_style1 {
+    background-color: var(--ColorControlAreaLight);
+    color: var(--ColorLight);
+    -qsc-icon-color: var(--ColorLight);
+    border: var(--ColorGreyMedium);
+    border-width: 0;
+}
+
+.button_style1:value(1) {
+    background: var(--ColorPrimary);
+    color: var(--ColorBlueDark);
+    -qsc-icon-color: var(--ColorBlueDark);
+}
+
+.button-transparent {
+    background-color: transparent;
+    border: 0px transparent;
+}
+
+.button-transparent:value(1) {
+    background-color: transparent;
+}
+
+.button_style2 {
+    background-color: transparent;
+    border: 0px transparent;
+    color: var(--ColorLight);
+    -qsc-icon-color: var(--ColorLight);
+}
+
+.button_style2:value(1) {
+    background-color: transparent;
+    color: var(--ColorPrimary);
+    -qsc-icon-color: var(--ColorPrimary);
+}
+
+
+
+.button_mute {
+    background: var(--ColorGreyMedium);
+    
+    -qsc-icon-font: material;
+    -qsc-icon: "volume_off"
+}
+
+.button_mute:value(1) {
+    -qsc-icon-color: var(--ColorRed);
+    /*-qsc-icon: "volume_off"*/
+}
+
+
+/* Groupbox  Styles */
+
+.groupbox-grey {
+    background-color: var(--ColorGreyMedium);
+}
+
+.groupbox-light {
+    background-color: var(--ColorLight);
+}
+
+/* LED  Styles */
+
+.led-ok {
+    background-color: var(--ColorStop);
+    border: var(--BorderDecoration) var(--ColorGreyDark);
+}
+
+.led-ok:value(1) {
+    background-color: var(--ColorGo);
+}
+
+.led_blue{
+    background-color: var(--ColorGreyMedium);
+    border: 0px transparent;
+}
+
+.led_blue:value(1){
+    background-color: var(--ColorBlueLight);
+}
+
+/* imported icon fonts */
+
+@font-face {font-family: "OscarDemi"; src:url("fonts/OscarDemi.ttf")}
+@font-face {font-family: "OscarThin"; src:url("fonts/OscarThin.ttf")}
+@font-face {font-family: "OscarBold"; src:url("fonts/OscarBold.ttf")}
+
+.icon-type-thin {-qsc-icon-font:"OscarThin"}
+.icon-type-thin:value(1) {-qsc-icon-font:"OscarThin"}
+.icon-type-bold {-qsc-icon-font:"OscarBold"}
+.icon-type-bold:value(1) {-qsc-icon-font:"OscarBold"}
+
+/* Special Lighting Icons */
+
+.icon_bulb_4_off {-qsc-icon-font:OscarDemi; -qsc-icon:"\E945";}
+
+.icon_bulb_3_low {-qsc-icon-font:OscarDemi; -qsc-icon:"\E943";}
+
+.icon_bulb_2_med {-qsc-icon-font:OscarDemi; -qsc-icon:"\E944";}
+
+.icon_bulb_1_high {-qsc-icon-font:OscarDemi; -qsc-icon:"\E946";}
+
+/**************************************************************/
+/*Material Icons Listed Below*/
+/**************************************************************/
+
+/*Devices*/
+
+.icon_tv_on {
+    -qsc-icon-font: material;
+    -qsc-icon: "tv";
+}
+
+.icon_tv_live {
+    -qsc-icon-font: material;
+    -qsc-icon: "live_tv";
+}
+
+.icon_tv_off {
+    -qsc-icon-font: material;
+    -qsc-icon: "tv_off";
+}
+
+.icon_lights_on {
+    -qsc-icon-font: material;
+    -qsc-icon: "lightbulb";
+}
+
+.icon_lights_off {
+    -qsc-icon-font: material;
+    -qsc-icon: "light_off";
+}
+
+.icon_vid_hdmi {
+    -qsc-icon-font: material;
+    -qsc-icon: 'settings_input_hdmi'
+}
+
+.icon_vid_laptop{
+    -qsc-icon-font: material;
+    -qsc-icon: 'laptop'
+}
+
+.icon_vid_airplay{
+    -qsc-icon-font: material;
+    -qsc-icon: 'airplay'
+}
+
+.icon_usb_cable{
+    -qsc-icon-font: material;
+    -qsc-icon: 'cable'
+}
+
+.icon_vid_laptop2{
+    -qsc-icon-font: material;
+    -qsc-icon: 'computer'
+}
+
+.icon_vid_desktop_windows{
+    -qsc-icon-font: material;
+    -qsc-icon: 'desktop_windows'
+}
+
+.icon_vid_tablet{
+    -qsc-icon-font: material;
+    -qsc-icon: 'tablet_mac'
+}
+
+.icon_vid_screenshare{
+    -qsc-icon-font: material;
+    -qsc-icon: 'screen_share'
+}
+
+.icon_vid_cast{
+    -qsc-icon-font: material;
+    -qsc-icon: 'cast'
+}
+
+/*Phones*/
+
+.icon_phone {
+    -qsc-icon-font: material;
+    -qsc-icon: 'phone'
+}
+
+.icon_phone_down {
+    -qsc-icon-font: material;
+    -qsc-icon: 'call_end'
+}
+
+.icon_phone_missed {
+    -qsc-icon-font: material;
+    -qsc-icon: 'phone_missed'
+}
+
+.icon_phone_mute {
+    -qsc-icon-font: material;
+    -qsc-icon: 'phone_disabled'
+}
+
+.icon_phone_answer {
+    -qsc-icon-font: material;
+    -qsc-icon: 'phone_in_talk'
+}
+/*Audio*/
+
+.icon_speaker {
+    -qsc-icon-font: material;
+    -qsc-icon: 'speaker'
+}
+
+.icon_speakers {
+    -qsc-icon-font: material;
+    -qsc-icon: 'speaker_group'
+}
+
+.icon_vol_up {
+    -qsc-icon-font: material;
+    -qsc-icon: 'volume_up'
+}
+
+.icon_vol_down {
+    -qsc-icon-font: material;
+    -qsc-icon: 'volume_down'
+}
+
+.icon_vol_mute {
+    -qsc-icon-font: material;
+    -qsc-icon: 'volume_off'
+}
+
+.icon_mic {
+    -qsc-icon-font: material;
+    -qsc-icon: 'mic'
+}
+
+.icon_mic_toggle {
+    -qsc-icon-font: material;
+    -qsc-icon: 'mic';
+}
+
+.icon_mic_toggle:value(1) {
+    -qsc-icon: 'mic_off'
+}
+
+.icon_vol_toggle {
+    -qsc-icon-font: material;
+    -qsc-icon: 'volume_up'
+}
+
+.icon_vol_toggle:value(1) {
+    -qsc-icon: 'volume_off'
+}
+
+/*Cameras*/
+
+.icon_cam {
+    -qsc-icon-font: material;
+    -qsc-icon: 'videocam'
+}
+
+.icon_zoom_in {
+    -qsc-icon-font: material;
+    -qsc-icon: 'zoom_in'
+}
+
+.icon_zoom_out {
+    -qsc-icon-font: material;
+    -qsc-icon: 'zoom_out'
+}
+
+.icon_arrow_1_up {
+    -qsc-icon-font: material;
+    -qsc-icon: 'arrow_upward'
+}
+
+.icon_arrow_2_down {
+    -qsc-icon-font: material;
+    -qsc-icon: 'arrow_downward'
+}
+
+.icon_arrow_3_left {
+    -qsc-icon-font: material;
+    -qsc-icon: 'arrow_back'
+}
+
+.icon_arrow_4_right {
+    -qsc-icon-font: material;
+    -qsc-icon: 'arrow_forward'
+}
+
+.icon_privacy {
+    -qsc-icon-font: material;
+    -qsc-icon: 'videocam_off'
+}
+
+.icon_videocam_on {
+    -qsc-icon-font: material;
+    -qsc-icon: 'videocam'
+}
+
+.icon_videocam_off {
+    -qsc-icon-font: material;
+    -qsc-icon: 'videocam_off'
+}
+
+/*Other*/
+
+.icon_school{
+    -qsc-icon-font: material;
+    -qsc-icon: 'school'
+}
+
+.icon_toggle{
+    -qsc-icon-font: material;
+    -qsc-icon: 'toggle_off'
+}
+.icon_toggle:value(1){
+    -qsc-icon-font: material;
+    -qsc-icon: 'toggle_on'
+}
+
+.icon_home {
+    -qsc-icon-font: material;
+    -qsc-icon: 'home'
+}
+
+.icon_settings {
+    -qsc-icon-font: material;
+    -qsc-icon: 'settings'
+}
+
+.icon_list {
+    -qsc-icon-font: material;
+    -qsc-icon: 'list'
+}
+
+.icon_info {
+    -qsc-icon-font: material;
+    -qsc-icon: 'info'
+}
+
+.icon_done {
+    -qsc-icon-font: material;
+    -qsc-icon: 'done'
+}
+
+.icon_music {
+    -qsc-icon-font: material;
+    -qsc-icon: 'music_note'
+}
+
+.icon_musicradio {
+    -qsc-icon-font: material;
+    -qsc-icon: 'radio'
+}
+
+.icon_radiobutton {
+    -qsc-icon-font: material;
+    -qsc-icon: 'radio_button_unchecked'
+}
+
+.icon_radiobutton:value(1) {
+    -qsc-icon: 'radio_button_checked';
+}
+
+
+.icon_checkbox {
+    -qsc-icon-font: material;
+    -qsc-icon: 'check_box_outline_blank'
+}
+
+
+.icon_checkbox:value(1) {
+    -qsc-icon-font: material;
+    -qsc-icon: 'check_box'
+}
+
+.icon_power {
+    -qsc-icon-font: material;
+    -qsc-icon: 'power_settings_new'
+}
+
+.icon_save {
+    -qsc-icon-font: material;
+    -qsc-icon: 'save'
+}
+
+.icon_looks_1 {
+    -qsc-icon-font: material;
+    -qsc-icon: 'looks_one'
+}
+
+.icon_looks_2 {
+    -qsc-icon-font: material;
+    -qsc-icon: 'looks_two'
+}
+
+.icon_looks_3 {
+    -qsc-icon-font: material;
+    -qsc-icon: 'looks_3'
+}
+
+.icon_looks_4 {
+    -qsc-icon-font: material;
+    -qsc-icon: 'looks_4'
+}
+
+.icon_looks_5 {
+    -qsc-icon-font: material;
+    -qsc-icon: 'looks_5'
+}
+/* Transports */
+.icon_transport_play_arrow {
+    -qsc-icon-font: material;
+    -qsc-icon: 'play_arrow'
+}
+
+.icon_transport_stop {
+    -qsc-icon-font: material;
+    -qsc-icon: 'stop'
+}
+
+.icon_stop {
+    -qsc-icon-font: material;
+    -qsc-icon: 'stop'
+}
+
+.icon_transport_pause {
+    -qsc-icon-font: material;
+    -qsc-icon: 'pause'
+}
+
+.icon_transport_ffwd {
+    -qsc-icon-font: material;
+    -qsc-icon: 'fast_forward'
+}
+
+.icon_transport_rewind {
+    -qsc-icon-font: material;
+    -qsc-icon: 'fast_rewind'
+}
+
+.icon_transport_next {
+    -qsc-icon-font: material;
+    -qsc-icon: 'skip_next'
+}
+
+.icon_transport_previous {
+    -qsc-icon-font: material;
+    -qsc-icon: 'skip_previous'
+}
+
+/*Positioning*/
+
+.align_icon_right {
+    -qsc-icon-align: 'right'
+}
+
+.align_icon_left {
+    -qsc-icon-align: 'right'
+}
+
+/*
+
+Copyright 2024 QSC, LLC
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this softwareand associated documentation files (the "Software"), to deal 
+in the Software without restriction, including without limitation the rights 
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished
+to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all 
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+  ______   ______   .__   __. .___________..______        ______    __                     __    __    ______  __                              
+ /      | /  __  \  |  \ |  | |           ||   _  \      /  __  \  |  |          ___      |  |  |  |  /      ||  |                             
+|  ,----'|  |  |  | |   \|  | `---|  |----`|  |_)  |    |  |  |  | |  |         ( _ )     |  |  |  | |  ,----'|  |                             
+|  |     |  |  |  | |  . `  |     |  |     |      /     |  |  |  | |  |         / _ \/\   |  |  |  | |  |     |  |                             
+|  `----.|  `--'  | |  |\   |     |  |     |  |\  \----.|  `--'  | |  `----.   | (_>  <   |  `--'  | |  `----.|  |                             
+ \______| \______/  |__| \__|     |__|     | _| `._____| \______/  |_______|    \___/\/    \______/   \______||__|                             
+                                                                                                                                               
+.___________..______          ___       __  .__   __.  __  .__   __.   _______         _______. _______ .______       __   _______     _______.
+|           ||   _  \        /   \     |  | |  \ |  | |  | |  \ |  |  /  _____|       /       ||   ____||   _  \     |  | |   ____|   /       |
+`---|  |----`|  |_)  |      /  ^  \    |  | |   \|  | |  | |   \|  | |  |  __        |   (----`|  |__   |  |_)  |    |  | |  |__     |   (----`
+    |  |     |      /      /  /_\  \   |  | |  . `  | |  | |  . `  | |  | |_ |        \   \    |   __|  |      /     |  | |   __|     \   \    
+    |  |     |  |\  \----./  _____  \  |  | |  |\   | |  | |  |\   | |  |__| |    .----)   |   |  |____ |  |\  \----.|  | |  |____.----)   |   
+    |__|     | _| `._____/__/     \__\ |__| |__| \__| |__| |__| \__|  \______|    |_______/    |_______|| _| `._____||__| |_______|_______/    
+                                                                                                                                               
+
+*/
