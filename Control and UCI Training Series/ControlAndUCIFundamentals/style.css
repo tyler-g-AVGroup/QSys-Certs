@@ -1,0 +1,605 @@
+/*
+ Control and UCI Fundamentals Class CSS Style
+ Created by P. Heyn / K. Rhodus - QSC
+ Modified by N. Makaryk - QSC
+ Version 1.1 - Classroom Build  
+*/
+
+
+
+
+
+.page_main {
+    background-image:url("images/background.png");
+    background-color: black;
+    background-size:100% 100%;
+   }
+  
+
+
+
+
+/* If you'd like to make a global decision to remove the stroke from all buttons in your design,
+uncomment the next command: */
+
+
+
+/*button {border-width: 0px}*/
+
+
+
+
+
+
+/*
+Main Page
+ */
+
+.main_fader {
+  background-color:#0076BF;
+  border-width:0px;
+  content: MAIN;
+  font-family:"Montserrat";
+  font-face:"Light";
+  font-size:24;
+  color:#A6DCFF
+}
+
+
+.main_volume-up {
+  background: rgba(0,0,0,0);
+  background-image:url("images/up_off.png");
+  content:" ";
+}
+
+.main_volume-up:value(1) {
+  background-image:url("images/up_on.png");
+  content:" ";
+}
+
+
+.main_volume-down {
+  background: rgba(0,0,0,0);
+  background-image:url("images/down_off.png");
+  content:" ";
+}
+
+.main_volume-down:value(1) {
+  background-image:url("images/down_on.png");
+  content:" ";
+}
+
+.main_speaker-mute {
+  background: rgba(0,0,0,0);
+  background-image:url("images/loudspeaker_off.png");
+  background-size: auto 80%;
+  content:" ";
+}
+  
+.main_speaker-mute:value(1) {
+  background-image:url("images/loudspeaker_mute.png");
+  background-size: auto 80%;
+  content:" ";
+}
+
+.main_nav-camera {
+  background: rgba(0,0,0,0);
+  background-image:url("images/camera_off.png");
+  background-size: auto 100%;
+  content:" ";
+}
+  
+.main_nav-camera:value(1) {
+  background-image:url("images/camera_on.png");
+  content:" ";
+}
+  
+.main_nav-lights {
+  background: rgba(0,0,0,0);
+  background-image:url("images/lights_off.png");
+  background-size: auto 100%;
+  content:" ";
+}
+  
+.main_nav-lights:value(1) {
+  background-image:url("images/lights_on.png");
+  content:" ";
+}
+  
+.main_nav-displays {
+  background: rgba(0,0,0,0);
+  background-image:url("images/display_off.png");
+  background-size: auto 100%;
+  content:" ";
+}
+  
+.main_nav-displays:value(1) {
+  background-image:url("images/display_on.png");
+  content:" ";
+}
+  
+/*
+Displays Page
+ */
+
+.displays_source-laptop1 {
+  background: rgba(0,0,0,0);
+  background-image:url("images/laptop1_off.png");
+  background-size: auto 95%;
+  content:" ";
+}
+
+.displays_source-laptop1:value(1) {
+  background: rgba(0,0,0,0);
+  background-image:url("images/laptop1_on.png");
+  content:" ";
+}
+
+.displays_source-laptop2 {
+  background: rgba(0,0,0,0);
+  background-image:url("images/laptop2_off.png");
+  background-size: auto 95%;
+  content:" ";
+}
+
+.displays_source-laptop2:value(1) {
+  background: rgba(0,0,0,0);
+  background-image:url("images/laptop2_on.png");
+  content:" ";
+}
+
+.displays_source-wireless {
+  background: rgba(0,0,0,0);
+  background-image:url("images/wireless_off.png");
+  background-size: auto 95%;
+  content:" ";
+  }
+
+.displays_source-wireless:value(1) {
+  background-image:url("images/wireless_on.png");
+  content:" ";
+}
+
+
+.displays_power {
+  -qsc-icon: "power";
+  background-color: #7C7C7C;
+  padding: 10px;
+  border-radius: 100px;
+  -qsc-icon-color: #2E2E2E;
+  content:" ";
+}
+
+.displays_power:value(1) {
+  -qsc-icon: "power";  
+  background-color: #0076BF;
+  border-radius: 100px;
+ -qsc-icon-color: white;
+  content:" ";
+}
+
+
+/*
+Camera Page Buttons
+*/
+
+.camera_direction-up {
+  background: rgba(0,0,0,0);
+  background-image:url("images/up_off.png");
+  background-size: auto 100%;
+  -qsc-icon-color: rgba (0,0,0,0);
+  content:" ";
+  }
+
+.camera_direction-up:value(1) {
+  background-image:url("images/up_on.png");
+  background-size: auto 100%;
+  -qsc-icon-color: rgba (0,0,0,0);
+  content:" ";
+  }
+
+.camera_direction-down {
+  background: rgba(0,0,0,0);
+  background-image:url("images/down_off.png");
+  background-size: auto 100%;
+  -qsc-icon-color: rgba (0,0,0,0);
+  content:" ";
+  }
+
+.camera_direction-down:value(1) {
+  background-image:url("images/down_on.png");
+  background-size: auto 100%;
+  -qsc-icon-color: rgba (0,0,0,0);
+  content:" ";
+  }
+
+.camera_direction-left {
+  background: rgba(0,0,0,0);
+  background-image:url("images/left_off.png");
+  background-size: auto 100%;
+  -qsc-icon-color: rgba (0,0,0,0);
+  content:" ";
+  }
+
+.camera_direction-left:value(1) {
+  background-image:url("images/left_on.png");
+  background-size: auto 100%;
+  -qsc-icon-color: rgba (0,0,0,0);
+  content:" ";
+  }
+  
+.camera_direction-right {
+  background: rgba(0,0,0,0);
+  background-image:url("images/right_off.png");
+  background-size: auto 100%;
+  -qsc-icon-color: rgba (0,0,0,0);
+  content: " ";
+  }
+
+.camera_direction-right:value(1) {
+  background-image:url("images/right_on.png");
+  background-size: auto 100%;
+  -qsc-icon-color: rgba (0,0,0,0);
+  content:" ";
+  }
+
+.camera_zoom-in {
+  background: rgba(0,0,0,0);
+  background-image:url("images/camera_zoom_in_off.png");
+  background-size: auto 100%;
+  -qsc-icon-color: rgba (0,0,0,0);
+  content:" ";
+  }
+
+.camera_zoom-in:value(1) {
+  background-image:url("images/camera_zoom_in_on.png");
+  background-size: auto 100%;
+  -qsc-icon-color: rgba (0,0,0,0);
+  content:" ";
+  }
+
+.camera_zoom-out {
+  background: rgba(0,0,0,0);
+  background-image:url("images/camera_zoom_out_off.png");
+  background-size: auto 100%;
+  -qsc-icon-color: rgba (0,0,0,0);
+  content:" ";
+}
+
+.camera_zoom-out:value(1) {
+  background-image:url("images/camera_zoom_out_on.png");
+  background-size: auto 100%;
+  -qsc-icon-color: rgba (0,0,0,0);
+  content:" ";
+  }
+
+.camera_privacy {
+  background: rgba(0,0,0,0);
+  background-image:url("images/privacy_off.png");
+  background-size: auto 100%;
+  -qsc-icon-color: rgba (0,0,0,0);
+  content:" ";
+}
+
+.camera_privacy:value(1) {
+  background-image:url("images/privacy_on.png");
+  background-size: auto 100%;
+  -qsc-icon-color: rgba (0,0,0,0);
+  content:" ";
+}
+
+
+.camera_select1 {
+  content:"FRONT";
+  font-family:Montserrat;
+  font-size:24;
+  background-color:#464646
+}
+
+.camera_select1:value(1) {
+  content:"FRONT";
+  font-family:Montserrat;
+  font-size:24;
+  font-face:Bold;
+  background-color:#0076BF
+}
+
+.camera_select2 {
+  content:"REAR";
+  font-family:Montserrat;
+  font-size:24;
+  background-color:#464646
+
+}
+
+.camera_select2:value(1) {
+  content:"REAR";
+  font-family:Montserrat;
+  font-size:24;
+  font-face:Bold;
+  background-color:#0076BF
+}
+
+.camera_preset1 {
+  background-color: #7C7C7C;
+  font-family: Poppins;
+  text-align: center;
+  border-width: 0px;
+  -qsc-font-style: Bold;
+  font-size:28px;
+  content: "1";
+  border-radius: 20px;
+}
+
+.camera_preset1:value(1) {
+  background-color: #0076BF;
+}
+
+.camera_preset2 {
+  background-color: #7C7C7C;
+  font-family: Poppins;
+  text-align: center;
+  border-width: 0px;
+  -qsc-font-style: Bold;
+  font-size:28px;
+  content: "2";
+  border-radius: 20px;
+}
+
+.camera_preset2:value(1) {
+  background-color: #0076BF;
+}
+
+.camera_preset3 {
+  background-color: #7C7C7C;
+  font-family: Poppins;
+  text-align: center;
+  border-width: 0px;
+  -qsc-font-style: Bold;
+  font-size:28px;
+  content: "3";
+  border-radius: 20px;
+}
+
+.camera_preset3:value(1) {
+  background-color: #0076BF;
+}
+
+
+.camera_presetLED {
+  background-color:  #7C7C7C;
+  content: " ";
+  border-width:0px;
+}
+
+.camera_presetLED:value(1) {
+  background-color: #0076BF
+}
+
+
+
+/*
+Call Active Layer Buttons
+*/
+
+.call_accept {
+  background-color: green;
+  border-radius:100px;
+  border-width:0px;
+  -qsc-icon:telephone;
+  content: " ";
+}
+
+.call_accept:value(1) {
+  background-color:white;
+}
+
+.call_decline {
+  background-color: red;
+  border-radius:100px;
+  border-width:0px;
+  -qsc-icon:x-circle;
+  content:" ";
+  }
+  
+.call_decline:value(1) {
+  background-color: white;  
+}
+
+
+.call_speaker-mute {
+  background: rgba(0,0,0,0);
+  background-image:url("images/loudspeaker_off.png");
+  background-size: auto 80%;
+  content:" ";
+}
+  
+.call_speaker-mute:value(1) {
+  background-image:url("images/loudspeaker_mute.png");
+  background-size: auto 80%;
+  content:" ";
+}
+
+
+
+
+/*
+Lights Page Buttons
+*/
+
+.lights_off {
+  background: rgba(0,0,0,0);
+  background-image:url("images/Lights_Dim.png");
+  background-size: auto 100%;
+  content:" ";
+}
+
+.lights_off:value(1) {
+  background-image:url("images/Lights_Dim_On.png");
+  background-size: auto 100%;
+  content:" ";
+}
+
+.lights_low {
+  background: rgba(0,0,0,0);
+  background-image:url("images/Lights_Low.png");
+  background-size: auto 100%;
+  content:" ";
+}
+
+.lights_low:value(1) {
+  background-image:url("images/Lights_Low_on.png");
+  background-size: auto 100%;
+  content:" ";
+}
+
+.lights_medium {
+  background: rgba(0,0,0,0);
+  background-image:url("images/Lights_Medium.png");
+  background-size: auto 100%;
+  content:" ";
+}
+
+.lights_medium:value(1) {
+  background-image:url("images/Lights_Medium_on.png");
+  background-size: auto 100%;
+  content:" ";
+}
+
+.lights_high {
+  background: rgba(0,0,0,0);
+  background-image:url("images/Lights_High.png");
+  background-size: auto 100%;
+  content:" ";
+}
+
+.lights_high:value(1) {
+  background-image:url("images/Lights_High_on.png");
+  background-size: auto 100%;
+  content:" ";
+}
+
+.lights_shades_open {
+  background: rgba(0,0,0,0);
+  background-image:url("images/shade_open.png");
+  background-size: auto 100%;
+  content:" ";
+}
+
+.lights_shades_open:value(1) {
+  background-image:url("images/shade_open_on.png");
+  background-size: auto 100%;
+  content:" ";
+}
+
+.lights_shades-close {
+  background: rgba(0,0,0,0);
+  background-image:url("images/shade_closed.png");
+  background-size: auto 100%;
+  content:" ";
+}
+
+.lights_shades-close:value(1) {
+  background-image:url("images/shade_closed_on.png");
+  background-size: auto 100%;
+  content:" ";
+}
+
+
+/*
+
+meter {
+  color: rgb(20,116,186);
+  background-color: rgba(0,0,0,0);
+  border-top-color: rgb(149,149,149);
+  border-bottom-color: rgb(149,149,149);
+  border-left-color: rgb(149,149,149);
+  border-right-color: rgb(149,149,149);
+  border-radius: 10px;
+  border-width: 2px;
+}
+
+groupbox {
+  border-width: 0px;
+  border-radius: 0px;
+}
+
+
+*/
+
+
+.main_group-sidebars {
+  border-radius: 10px;
+  background-color: rgba(0,0,0,.37);
+}
+.main_logo {
+  background-image:url("images/logo.png");
+  background-size: 90% auto;
+  color: rgba(255, 255, 255, 0);
+  }
+
+.connect-usb {
+  background-image:url("images/connect_usb.png");
+  background-size: 90% auto;
+  color: rgba(255, 255, 255, 0);
+}
+
+
+
+/* TEXT OPTIONS */
+
+
+
+
+.text__all {
+  background-color: rgba(0,0,0,0);
+  color: rgb(255, 255, 255);
+  font-family: Poppins;
+  text-align: center;
+  border-width: 0px;
+  -qsc-font-style: Bold;
+}
+
+.text_alignleft {
+  text-align: left;
+}
+
+.text_alignright {
+  text-align: right;
+}
+
+
+.text_aligntop {
+  vertical-align: top;
+}
+
+
+.text_colorred {
+  color: rgb(255,0,0)
+}
+
+.text_colorblack {
+  color: rgb(0,0,0)
+}
+
+.text_colorwhite {
+  color: rgb(255,255,255)
+}
+
+.text_sizelarge {
+  -qsc-font-style: Bold;
+  font-size:42px;
+
+}
+
+.text_sizemedium {
+  font-size:28px;
+  -qsc-font-style: Regular;
+}
+
+
+.text_sizesmall {
+  font-size:18px;
+  -qsc-font-style: Light;
+}
+
